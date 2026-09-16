@@ -95,7 +95,7 @@ init_64:
     mov ds, ax
     mov es, ax
     
-    call kernel_main            ; Welcome to Aero1EOS 4.0 64-bit
+    call kernel_main            ; Welcome to ScribbleOS 4.0 64-bit
 
 .halt:
     hlt

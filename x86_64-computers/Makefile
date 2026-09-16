@@ -1,8 +1,8 @@
-# --- Aero1EOS 4 Master Build System ---
+# --- ScribbleOS 4 Master Build System ---
 SRCDIR = src
 OBJDIR = obj
-BIN = aero1eos4.bin
-ISO = aero1eos4.iso
+BIN = scribbleos4.bin
+ISO = scribbleos4.iso
 PAYLOAD_H = $(SRCDIR)/section4_shell/grub_payload.h
 CC = x86_64-linux-gnu-gcc
 LD = x86_64-linux-gnu-ld
@@ -21,8 +21,8 @@ all: $(ISO)
 $(PAYLOAD_H):
 	@echo "--- CREATING BOOTSTRAP PAYLOAD ---"
 	@mkdir -p $(SRCDIR)/section4_shell
-	@echo "unsigned char aero1eos4_bin[] = {0x00};" > $(PAYLOAD_H)
-	@echo "unsigned int aero1eos4_bin_len = 1;" >> $(PAYLOAD_H)
+	@echo "unsigned char scribbleos4_bin[] = {0x00};" > $(PAYLOAD_H)
+	@echo "unsigned int scribbleos4_bin_len = 1;" >> $(PAYLOAD_H)
 	@echo "unsigned char boot_img[] = {0x00};" >> $(PAYLOAD_H)
 	@echo "unsigned int boot_img_len = 1;" >> $(PAYLOAD_H)
 	@echo "unsigned char grub_core_img[] = {0x00};" >> $(PAYLOAD_H)
@@ -39,7 +39,7 @@ update_payload: $(BIN)
 	@echo "--- EMBEDDING REAL KERNEL INTO PAYLOAD ---"
 	grub-mkimage -o grub_core.img -O i386-pc -c early_grub.cfg -p /boot/grub biosdisk part_msdos fat normal multiboot multiboot2
 	cp /usr/lib/grub/i386-pc/boot.img .
-	@echo "/* Real Aero1EOS Payload */" > $(PAYLOAD_H)
+	@echo "/* Real ScribbleOS Payload */" > $(PAYLOAD_H)
 	xxd -i boot.img >> $(PAYLOAD_H)
 	xxd -i grub_core.img >> $(PAYLOAD_H)
 	xxd -i $(BIN) >> $(PAYLOAD_H)
@@ -73,8 +73,8 @@ clean:
 run: _check-qemu _create-disk
 	@echo "Starting QEMU with sound support..."
 	qemu-system-x86_64 -m 64M \
-	  -drive file=aero1eos.img,format=raw \
-	  -cdrom aero1eos4.iso \
+	  -drive file=scribbleos.img,format=raw \
+	  -cdrom scribbleos4.iso \
 	  -boot d \
 	  -audiodev $$(if [ -n "$$PIPEWIRE_REMOTE" ] || [ -S /run/user/$$(id -u)/pipewire-0 ]; then echo "pipewire,id=snd0"; elif pactl info >/dev/null 2>&1; then echo "pa,id=snd0"; else echo "alsa,id=snd0"; fi) \
 	  -device intel-hda \
@@ -84,7 +84,7 @@ _check-qemu:
 	@which qemu-system-x86_64 > /dev/null || (echo "Error: qemu-system-x86_64 is not installed." && exit 1)
 
 _create-disk:
-	@if [ ! -f aero1eos.img ]; then \
-		echo "Creating disk image aero1eos.img..."; \
-		qemu-img create -f raw aero1eos.img 10G; \
+	@if [ ! -f scribbleos.img ]; then \
+		echo "Creating disk image scribbleos.img..."; \
+		qemu-img create -f raw scribbleos.img 10G; \
 	fi

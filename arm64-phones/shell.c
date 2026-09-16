@@ -28,7 +28,7 @@ int atoi_custom(char* str);
 /* --- Built-in Command Definitions --- */
 
 void cmd_help() {
-    fb_puts("\nAero1EOS Phone Commands:\n", COLOR_YELLOW, COLOR_BG);
+    fb_puts("\nScribbleOS Phone Commands:\n", COLOR_YELLOW, COLOR_BG);
     fb_puts("help      - List all available commands\n", COLOR_WHITE, COLOR_BG);
     fb_puts("cls       - Clear the screen\n", COLOR_WHITE, COLOR_BG);
     fb_puts("echo      - Repeat text back to screen\n", COLOR_WHITE, COLOR_BG);
@@ -51,7 +51,7 @@ void cmd_echo(char* args) {
 }
 
 void cmd_neofetch() {
-    fb_puts("   ______      Aero1EOS 4.0 (Phone Edition)\n", COLOR_YELLOW, COLOR_BG);
+    fb_puts("   ______      ScribbleOS 4.0 (Phone Edition)\n", COLOR_YELLOW, COLOR_BG);
     fb_puts("  / ____/      ---------------------------\n", COLOR_YELLOW, COLOR_BG);
     fb_puts(" / /  __       ARCH: AArch64 (ARMv8-A)\n", COLOR_WHITE, COLOR_BG);
     fb_puts("/ /__/ /       TARGET: Samsung A12\n", COLOR_WHITE, COLOR_BG);
@@ -202,7 +202,7 @@ int atoi_custom(char* str) {
 void shell_dispatch(char* buffer) {
     // Check for an empty entry input
     if (strlen(buffer) == 0) {
-        fb_puts("\nAero1EOS / > ", COLOR_YELLOW, COLOR_BG);
+        fb_puts("\nScribbleOS / > ", COLOR_YELLOW, COLOR_BG);
         return;
     }
 
@@ -234,13 +234,13 @@ void shell_dispatch(char* buffer) {
     } else if (strcmp(buffer, "lullaby") == 0) {
         play_lullaby_sync();
     } else {
-        fb_puts("\nAero1EOS: '", COLOR_RED, COLOR_BG);
+        fb_puts("\nScribbleOS: '", COLOR_RED, COLOR_BG);
         fb_puts(buffer, COLOR_WHITE, COLOR_BG);
         fb_puts("' structural match not found. Type 'help'.\n", COLOR_RED, COLOR_BG);
     }
 
     // Re-print structural target prompt loop frame boundary
-    fb_puts("\nAero1EOS / > ", COLOR_YELLOW, COLOR_BG);
+    fb_puts("\nScribbleOS / > ", COLOR_YELLOW, COLOR_BG);
 }
 
 /* --- Global Shell Management State --- */

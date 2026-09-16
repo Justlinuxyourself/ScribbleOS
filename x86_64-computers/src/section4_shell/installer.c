@@ -4,11 +4,11 @@
 
 void cmd_install_os() {
     vga_set_color(0x0B); // Cyan
-    vga_write("\n[ Aero1EOS 4.0 Self-Hosting Installer ]\n");
+    vga_write("\n[ ScribbleOS 4.0 Self-Hosting Installer ]\n");
     vga_set_color(0x0F); // White
 
     // --- 1. BUILD SYSTEM CHECK ---
-    if (aero1eos4_bin_len <= 1) {
+    if (scribbleos4_bin_len <= 1) {
         vga_set_color(0x0C); // Red
         vga_write("CRITICAL ERROR: Kernel payload is empty (1 byte)!\n");
         vga_write("Fix: Run 'make clean' and then 'make' twice.\n");
@@ -41,7 +41,7 @@ void cmd_install_os() {
     sector_0[452] = 0xFF; // Ending Sector
     sector_0[453] = 0xFF; // Ending Cylinder
     
-    // Starting LBA Sector (Sector 2048, where Aero1EOS lives)
+    // Starting LBA Sector (Sector 2048, where ScribbleOS lives)
     sector_0[454] = 0x00; 
     sector_0[455] = 0x08; 
     sector_0[456] = 0x00; 
@@ -64,17 +64,17 @@ void cmd_install_os() {
 
     // --- 5. INSTALL AERO1EOS KERNEL (SECTOR 2048) ---
     vga_write("Step 3: Deploying Kernel to Sector 2048... ");
-    uint32_t k_sectors = (aero1eos4_bin_len + 511) / 512;
+    uint32_t k_sectors = (scribbleos4_bin_len + 511) / 512;
 
     for (uint32_t i = 0; i < k_sectors; i++) {
-        ide_write_sector_bytes(2048 + i, &aero1eos4_bin[i * 512]);
+        ide_write_sector_bytes(2048 + i, &scribbleos4_bin[i * 512]);
         if (i % 25 == 0) vga_putchar('.');
     }
     vga_write(" DONE\n");
 
     // --- 6. SUCCESS SUMMARY ---
     vga_set_color(0x0A); // Green
-    vga_write("\nSUCCESS! Aero1EOS 4.0 is now on (hd0).\n");
+    vga_write("\nSUCCESS! ScribbleOS 4.0 is now on (hd0).\n");
     vga_set_color(0x0F); // White
     
     vga_write("Reboot and type this into GRUB:\n");

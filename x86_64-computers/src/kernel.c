@@ -77,14 +77,18 @@ void trigger_ali_morse() {
     vga_clear();
 }
 void bootup_screen() {
-    vga_write("             ____   _____  \n");
-    vga_write("     /\\     / __ \\ / ____| \n");
-    vga_write("    /  \\   | |  | | (___   \n");
-    vga_write("   / /\\ \\  | |  | |\\___ \\  \n");
-    vga_write("  / ____ \\ | |__| |____) | \n");
-    vga_write(" /_/    \\_\\ \\____/|_____/  \n");
-    vga_write("        ______             \n");
-    vga_write("       |______|            \n");
+    for (int i = 0; i < 7; i++) {
+        vga_write("
+    }                                                                              \n");
+    vga_write("               ____            _ _     _     _       ___  ____                \n");
+    vga_write("              / ___|  ___ _ __(_) |__ | |__ | | ___ / _ \/ ___|               \n");
+    vga_write("              \___ \ / __| '__| | '_ \| '_ \| |/ _ \ | | \___ \               \n");
+    vga_write("               ___) | (__| |  | | |_) | |_) | |  __/ |_| |___) |              \n");
+    vga write("              |____/ \___|_|  |_|_.__/|_.__/|_|\___|\___/|____/               \n");
+    vga_write("                                                                              \n");
+    for (int i = 0; i < 8; i++) {
+        vga_write("
+    }                                                                              \n");
 }
 
 void lock_system_hardened() {
@@ -133,7 +137,7 @@ void lock_system_hardened() {
                     // In-line XOR cipher execution
                     int i = 0;
                     while (input[i] != '\0' && i < 10) {
-                        encrypted_input[i] = input[i] ^ 0x5A;
+                        encrypted_input[i] = input[i] ^ 0x80;
                         i++;
                     }
                     encrypted_input[i] = '\0';
@@ -297,13 +301,14 @@ void kernel_main() {
     log_verbose("SYS", "Initialization sequence complete.");
     vga_clear();
     bootup_screen();
+    vga_clear();
     startup_melody();
 
     while (inb(0x64) & 0x01) { inb(0x60); }
 
     lock_system_hardened();
     
-    vga_write("Aero1EOS 4 - made by a 12yo - Multi-TTY Mode\n");
+    vga_write("ScribbleOS 4 - made by a 12yo - Multi-TTY Mode\n");
     vga_write("System Ready. Use Ctrl+Alt+F1-F10 to switch.\n");
     vga_write("Press Enter.");
 

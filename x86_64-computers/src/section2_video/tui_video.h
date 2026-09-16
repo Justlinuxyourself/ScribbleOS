@@ -10,7 +10,7 @@ All rights reserved.
 #define VGA_HEIGHT 25
 #define VGA_MEM_ADDR 0xB8000
 
-// Aero1EOS Notebook Design Colors
+// ScribbleOS Notebook Design Colors
 #define ATTR_DEFAULT 0x1E      // Yellow text on Blue background
 #define ATTR_SELECTED 0x70     // Inverted: Black text on Light Gray
 #define ATTR_HEADER 0x1F       // White text on Blue background

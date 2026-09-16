@@ -72,7 +72,7 @@ static void render_dashboard() {
     for (int i = 0; i < VGA_WIDTH; i++) {
         tui_print_at(i, 0, " ", ATTR_HEADER);
     }
-    tui_print_at(26, 0, "Aero1EOS 4.0 - Custom TUI Notebook", ATTR_HEADER);
+    tui_print_at(26, 0, "ScribbleOS 4.0 - Custom TUI Notebook", ATTR_HEADER);
 
     // 2. Generate 2x3 grid matrix for Applications (IDs 0 to 5)
     const char* app_names[] = {

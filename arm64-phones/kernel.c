@@ -15,9 +15,9 @@ void sleep_ticks(volatile int count) {
 void kernel_main() {
     fb_clear(0x000033); // Set background canvas color
 
-    fb_puts("Aero1EOS Core Operating System Boot Sequence\n", 0x00FF00, 0x000033);
+    fb_puts("ScribbleOS Core Operating System Boot Sequence\n", 0x00FF00, 0x000033);
     fb_puts("Loading Core Modules... Done.\n", 0xFFFFFF, 0x000033);
-    fb_puts("Aero1EOS > ", 0xFFFF00, 0x000033);
+    fb_puts("ScribbleOS > ", 0xFFFF00, 0x000033);
 
     shell_init();
 

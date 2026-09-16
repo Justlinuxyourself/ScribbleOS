@@ -64,7 +64,7 @@ void cmd_run_script() {
     current_line = 0;
     sp = 0;
 
-    vga_write("\n--- Aero1EOS 4 Notebook Scripting ---\n");
+    vga_write("\n--- ScribbleOS 4 Notebook Scripting ---\n");
     vga_write("Enter commands. Type 'doner' to finish.\n");
 
     while (is_recording) {

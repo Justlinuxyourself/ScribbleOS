@@ -194,7 +194,7 @@ char* ltoa(long value, char* str) {
 void cmd_help(char* args) {
     (void)args;
     
-    vga_write("\nAero1EOS 4 Commands: ");
+    vga_write("\nScribbleOS 4 Commands: ");
     
     command_node_t* curr = command_list;
     while (curr) {
@@ -235,7 +235,7 @@ void cmd_neofetch(char* args) {
     char size_buf[12];
     itohex((unsigned long)&_kernel_end, heap_addr_buf);
     
-    vga_write("   ______      Aero1EOS 4.0\n");
+    vga_write("   ______      ScribbleOS 4.0\n");
     vga_write("  / ____/      ----------\n");
     vga_write(" / /  __       CPU: "); vga_write(cpu_name); vga_write("\n");
     vga_write("/ /__/ /       MEM: "); vga_write(mem_str); vga_write(" bytes used\n");
@@ -714,7 +714,7 @@ void todo_add(char* text) {
             strcpy(my_list[i].task, text);
             my_list[i].done = 0;
             my_list[i].active = 1;
-            vga_write("Task added to Aero1EOS list.\n");
+            vga_write("Task added to ScribbleOS list.\n");
             return;
         }
     }
@@ -740,7 +740,7 @@ void draw_menu_item(int id, int selected, const char* text) {
         vga_write(" > ");               // Arrow pointer
         vga_set_color(0x70);            // Invert: Black text on Light Gray background
         vga_write(text);
-        vga_set_color(NOTEBOOK_YELLOW); // Reset to standard Aero1EOS Yellow/Blue
+        vga_set_color(NOTEBOOK_YELLOW); // Reset to standard ScribbleOS Yellow/Blue
     } else {
         vga_write("   ");               // Spacer for non-selected items
         vga_write(text);
@@ -761,7 +761,7 @@ void cmd_menu(char* args) {
         // Header Section
         vga_set_color(0x1F); // White on Blue (Status Bar Style)
         vga_write("========================================\n");
-        vga_write("          Aero1EOS 4.0 - TOOLBOX           \n");
+        vga_write("          ScribbleOS 4.0 - TOOLBOX           \n");
         vga_write("      (Use Arrows to Move, Enter)       \n");
         vga_write("========================================\n\n");
         vga_set_color(NOTEBOOK_YELLOW);
@@ -816,7 +816,7 @@ void cmd_menu(char* args) {
     }
 
     vga_clear();
-    vga_write("Returned to Aero1EOS Shell.\n> ");
+    vga_write("Returned to ScribbleOS Shell.\n> ");
 }
 void play_bad_apple() {
      unsigned short* vga_hardware = (unsigned short*)VGA_ADDRESS;
@@ -864,7 +864,7 @@ void cmd_read_disk(char* args) {
 void cmd_write_disk(char* args) {
     if (args == 0 || *args == '\0') {
         vga_write("Usage: write_sector <lba> <string>\n");
-        vga_write("Example: write_sector 10 Hello_Aero1EOS\n");
+        vga_write("Example: write_sector 10 Hello_ScribbleOS\n");
         return;
     }
 
@@ -907,7 +907,7 @@ void cmd_write_disk(char* args) {
         len++;
     }
 
-    vga_write("Aero1EOS Disk: Writing to LBA ");
+    vga_write("ScribbleOS Disk: Writing to LBA ");
     vga_write(lba_str); 
     vga_write("... ");
 
@@ -1053,7 +1053,7 @@ void cmd_disk_speed(char* args) {
     uint32_t test_sectors = 8192; 
     uint32_t safe_offset = 20000; // Start 10MB into the disk
     
-    vga_write("--- Aero1EOS 4.0 I/O Benchmark (4MB Test) ---\n");
+    vga_write("--- ScribbleOS 4.0 I/O Benchmark (4MB Test) ---\n");
     vga_write("Target: LBA "); 
     char lba_buf[16]; vga_write(itoa(safe_offset, lba_buf));
     vga_write("\n\n");
@@ -1183,7 +1183,7 @@ void cmd_edit(char* args) {
         return;
     }
 
-    vga_write("\n--- Aero1EOS 4 Multiline Notebook ---\n");
+    vga_write("\n--- ScribbleOS 4 Multiline Notebook ---\n");
     vga_write("File: "); vga_write(filename); vga_write("\n");
 
     static char note_content[512];
@@ -1635,7 +1635,7 @@ void cmd_dvd(char* args) {
     int x = 33;
     int y = 10;
     
-    // Box dimensions expanded to perfectly fit Aero1EOS
+    // Box dimensions expanded to perfectly fit ScribbleOS
     int box_w = 14;
     int box_h = 3;
 
@@ -1710,7 +1710,7 @@ void cmd_dvd(char* args) {
             current_color = colors[color_index];
         }
 
-        // 4. DRAW the Aero1EOS box position
+        // 4. DRAW the ScribbleOS box position
         for (int row = 0; row < box_h; row++) {
             for (int col = 0; col < box_w; col++) {
                 int tx = x + col;
@@ -1724,7 +1724,7 @@ void cmd_dvd(char* args) {
                     if (col == 0 || col == box_w - 1) display_char = '|';
                     if ((row == 0 || row == box_h - 1) && (col == 0 || col == box_w - 1)) display_char = '+';
                     
-                    // Injecting "Aero1EOS" into the center row
+                    // Injecting "ScribbleOS" into the center row
                     if (row == 1 && col == 3) { vga[(ty * DVD_COLS) + tx] = 'A' | (current_color << 8); col++; }
                     else if (row == 1 && col == 4) { vga[(ty * DVD_COLS) + tx] = 'e' | (current_color << 8); col++; }
                     else if (row == 1 && col == 5) { vga[(ty * DVD_COLS) + tx] = 'r' | (current_color << 8); col++; }
@@ -1762,7 +1762,7 @@ void cmd_dvd(char* args) {
 void cmd_socials(char* args) {
     (void)args; // Unused for this command
 
-    vga_write("\n=================== Aero1EOS Developer Socials ===================\n");
+    vga_write("\n=================== ScribbleOS Developer Socials ===================\n");
     vga_write("  GitHub:    justlinuxyourself\n");
     vga_write("  Discord:   alithealiosowner\n");
     vga_write("  TikTok:    hisswx9\n");
@@ -1856,7 +1856,7 @@ void cmd_birthday(char* args) {
     int age_days = curr_day_of_year - birth_day_of_year;
     
     // 4. Output results
-    vga_write("\n--- Aero1EOS Birthday Info ---\n");
+    vga_write("\n--- ScribbleOS Birthday Info ---\n");
     vga_write("Birthday: February 13, 2026\n");
     vga_write("Age: "); 
     char buf[8];
@@ -2248,7 +2248,7 @@ void cmd_passwd(char* args) {
         char encrypted_confirm[11];
         int i = 0;
         while (confirm_input[i] != '\0' && i < 10) {
-            encrypted_confirm[i] = confirm_input[i] ^ 0x5A;
+            encrypted_confirm[i] = confirm_input[i] ^ 0x80;
             i++;
         }
         encrypted_confirm[i] = '\0';
@@ -2329,7 +2329,7 @@ void cmd_passwd(char* args) {
             char encrypted_verify[11];
             int i = 0;
             while (verify_input[i] != '\0' && i < 10) {
-                encrypted_verify[i] = verify_input[i] ^ 0x5A;
+                encrypted_verify[i] = verify_input[i] ^ 0x80;
                 i++;
             }
             encrypted_verify[i] = '\0';
@@ -2344,7 +2344,7 @@ void cmd_passwd(char* args) {
         char encrypted_new[11];
         int i = 0;
         while (clean_new_pass[i] != '\0' && i < 10) {
-            encrypted_new[i] = clean_new_pass[i] ^ 0x5A;
+            encrypted_new[i] = clean_new_pass[i] ^ 0x80;
             i++;
         }
         encrypted_new[i] = '\0';
@@ -2380,7 +2380,7 @@ void shell_init() {
     shell_register_command("cls",  "Clear the notebook screen",   cmd_cls);
     shell_register_command("echo", "Print text to the screen",    cmd_echo);
     shell_register_command("sysinfo", "Display dynamic system info", cmd_neofetch);
-    shell_register_command("uptime", "Show how long Aero1EOS has been running", cmd_uptime);
+    shell_register_command("uptime", "Show how long ScribbleOS has been running", cmd_uptime);
     shell_register_command("free", "Check dynamic RAM usage", cmd_free);
     shell_register_command("timezone", "Adjust the status bar clock offset", shell_cmd_timezone);
     shell_register_command("lock", "Locks the system", shell_lock);
@@ -2400,7 +2400,7 @@ void shell_init() {
     shell_register_command("get", "Get VAR", cmd_get);
     shell_register_command("tdadd", "Add to ToDo List", todo_add);
     shell_register_command("tdshw", "Show ToDo List", todo_show);
-    shell_register_command("menu", "Aero1EOS Menu", cmd_menu);
+    shell_register_command("menu", "ScribbleOS Menu", cmd_menu);
     shell_register_command("badapple", "Bad Apple", play_bad_apple);
     shell_register_command("read_sector", "Read Sector IDE", cmd_read_disk);
     shell_register_command("write_sector", "Write Sector IDE", cmd_write_disk);
@@ -2415,9 +2415,9 @@ void shell_init() {
     shell_register_command("fmrt","Wipe and init AliFS", cmd_format);
     shell_register_command("mkdir", "Create a new directory", cmd_mkdir);
     shell_register_command("gtdi", "Go To DIrectory", cmd_cd);
-    shell_register_command("aosdcserv", "Aero1EOS Discord Server", display_discord_qr);
+    shell_register_command("aosdcserv", "ScribbleOS Discord Server", display_discord_qr);
     shell_register_command("asma", "Random Name of Allah and its meaning", cmd_asma);
-    shell_register_command("install", "Install Aero1EOS", install_aos);
+    shell_register_command("install", "Install ScribbleOS", install_aos);
     shell_register_command("divbyzero", "DivbyZero", cmd_divbyzero);
     shell_register_command("gui", "GUI", gui);
     shell_register_command("color", "Interactive text and background color customization wizard", cmd_color);
@@ -2425,8 +2425,8 @@ void shell_init() {
     shell_register_command("enablestat", "ENABLE STATus bar", enable_status_bar);
     shell_register_command("killscreen", "KillScreen", killscreen);
     shell_register_command("cmatrix", "Matrix digital rain screen effect", cmd_cmatrix);
-    shell_register_command("ss", "Bouncing Aero1EOS logo screensaver", cmd_dvd);
-    shell_register_command("socials", "Display Aero1EOS creator contact", cmd_socials);
+    shell_register_command("ss", "Bouncing ScribbleOS logo screensaver", cmd_dvd);
+    shell_register_command("socials", "Display ScribbleOS creator contact", cmd_socials);
     shell_register_command("lullaby", "Lullaby (made it for my baby sis)", play_lullaby_sync);
     shell_register_command("history", "HISTORY", cmd_history);
     shell_register_command("birthday", "Show OS age and birthday", cmd_birthday);
@@ -2461,7 +2461,7 @@ void shell_dispatch(char* buffer) {
     }
     // If the user just hits enter, just print a new prompt on a new line
     if (strlen(buffer) == 0) {
-        vga_write("\nAero1EOS:");
+        vga_write("\nScribbleOS:");
         vga_write(current_path);
         vga_write("> ");
         return;
@@ -2481,7 +2481,7 @@ void shell_dispatch(char* buffer) {
         if (strcmp(curr->name, buffer) == 0) {
             vga_write("\n"); // Move to new line before command output
             curr->function(args);
-            vga_write("\nAero1EOS:");
+            vga_write("\nScribbleOS:");
             vga_write(current_path);
             vga_write("> ");
             return;
@@ -2490,10 +2490,10 @@ void shell_dispatch(char* buffer) {
     }
 
     // If command not found
-    vga_write("\nAero1EOS: '");
+    vga_write("\nScribbleOS: '");
     vga_write(buffer);
     vga_write("' not found. Type 'help'.\n ");
-    vga_write("\nAero1EOS:");
+    vga_write("\nScribbleOS:");
     vga_write(current_path);
     vga_write("> ");
 }

@@ -1,4 +1,4 @@
-name: Aero1EOS Automatic Release
+name: ScribbleOS Automatic Release
 
 on:
   push:
@@ -37,13 +37,13 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: latest
-          name: "Aero1EOS Continuous Build"
+          name: "ScribbleOS Continuous Build"
           body: |
-            Automated build of Aero1EOS for the notebook hardware.
+            Automated build of ScribbleOS for the notebook hardware.
             **Commit:** ${{ github.sha }}
           files: |
-            x86_64-computers/aero1eos4.iso
-            x86_64-computers/aero1eos4.bin
+            x86_64-computers/scribbleos4.iso
+            x86_64-computers/scribbleos4.bin
           prerelease: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -142,7 +142,7 @@ jobs:
               except: continue
           
           if birthday_zones:
-              footer_text = f"HAPPY BIRTHDAY TO Aero1EOS! Active in: {', '.join(birthday_zones)}"
+              footer_text = f"HAPPY BIRTHDAY TO ScribbleOS! Active in: {', '.join(birthday_zones)}"
           else:
               now_utc = datetime.now(ZoneInfo("UTC"))
               next_birthday = datetime(now_utc.year, 2, 13, tzinfo=ZoneInfo("UTC"))
@@ -167,7 +167,7 @@ jobs:
           ]
           
           if build_status == 'success':
-              title = "Aero1EOS Build Successful! HELL YEA-🦅"
+              title = "ScribbleOS Build Successful! HELL YEA-🦅"
               color = 2326507 
               description = f"**Commit Details:**\n{commit_msg}\n\n"
               if os.path.exists('stats.json'):

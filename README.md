@@ -1,4 +1,4 @@
-<h1 align="center">💻 Aero1EOS 4.0 - Notebook Edition</h1>
+<h1 align="center">💻 ScribbleOS 4.0 - Notebook Edition</h1>
 
 <h3 align="center">
 
@@ -29,7 +29,7 @@ made by <strong>علي يحي علي صميلي</strong>
 > [! WARNING]
 > Some things don't work when you're using real hardware, and there are a few that haven't been tested yet.
 
-Aero1EOS 4 is a OS that was built from scratch. It's like a notebook for your computer, but it's safe and secure. This OS has a few cool features, like a multi-terminal interface, which is like having multiple windows open at the same time. It also has a status bar that's super accurate and can keep track of time really well. The person who made all this possible is **علي يحي علي صميلي** Which is me.
+ScribbleOS 4 is a OS that was built from scratch. It's like a notebook for your computer, but it's safe and secure. This OS has a few cool features, like a multi-terminal interface, which is like having multiple windows open at the same time. It also has a status bar that's super accurate and can keep track of time really well. The person who made all this possible is **علي يحي علي صميلي** Which is me.
 
 ---
 
@@ -57,7 +57,7 @@ Aero1EOS 4 is a OS that was built from scratch. It's like a notebook for your co
 
 ### 3. Video & I/O
 
-* **VGA Driver:** Manages an 80x25 text buffer at `0xB8000` with custom "Notebook Yellow" styling (`0x1E`, hence why Aero1EOS is named).
+* **VGA Driver:** Manages an 80x25 text buffer at `0xB8000` with custom "Notebook Yellow" styling (`0x1E`, hence why ScribbleOS is named).
 * **CMOS Integration:** It talks directly to the computer's hardware ports, like `0x70/0x71` (CMOS ports), to get the current time and keep track of any security issues that happen. This helps the system stay safe and know what's going on at all times.
 
 ---
@@ -69,7 +69,7 @@ Aero1EOS 4 is a OS that was built from scratch. It's like a notebook for your co
 | `help` | Lists all system commands. |
 | `cls` | Clears the screen. |
 | `sysinfo` | Displays CPU vendor, RAM usage. |
-| `uptime` | Displays the amount of time Aero1EOS has been up and running. |
+| `uptime` | Displays the amount of time ScribbleOS has been up and running. |
 | `free` | This tool checks how much RAM is being used, including the total amount, how much is used, and how much is free. |
 | `timezone` | This setting changes the clock in the status bar to show the right time for your area, and it does it instantly. |
 | `lock` | This is what you use to manually trigger a super secure lock screen. |
@@ -92,7 +92,7 @@ Aero1EOS 4 is a OS that was built from scratch. It's like a notebook for your co
 
 ## 🍎 Bad Apple!! VGA Demo
 
-Aero1EOS 4 comes with a special demo that shows off its capabilities. This demo is called "Bad Apple!!" and it's an ASCII animation. The main goal of this demo is to highlight how stable the kernel is when it comes to quickly mapping VGA memory. It also showcases the **Notebook Edition** and its independent TTY system, which can handle things on its own.
+ScribbleOS 4 comes with a special demo that shows off its capabilities. This demo is called "Bad Apple!!" and it's an ASCII animation. The main goal of this demo is to highlight how stable the kernel is when it comes to quickly mapping VGA memory. It also showcases the **Notebook Edition** and its independent TTY system, which can handle things on its own.
 
 ### 🛠 Technical Specifications
 
@@ -103,7 +103,7 @@ Aero1EOS 4 comes with a special demo that shows off its capabilities. This demo 
 
 ---
 
-## 💬 Aero1EOS Community
+## 💬 ScribbleOS Community
 
 * [Discord Server](https://discord.gg/26JRFCRpFV)
 
@@ -130,15 +130,15 @@ Aero1EOS 4 comes with a special demo that shows off its capabilities. This demo 
 
 ### Kernel & Operating System
 
-Aero1EOS 4.0 is free to use because it's open-source, and it's covered by the **MIT License**.
+ScribbleOS 4.0 is free to use because it's open-source, and it's covered by the **MIT License**.
 
 By using, modifying, or distributing this software, you agree to the following terms:
 * When using this software, you have to keep the original copyright notice and permission notice in all files.
 * **No Guarantee:** This OS comes with no promises. Im not responsible if something goes wrong or you lose data when you use it.
 
 > [! CAUTION]
-> **Important Notice:** If you change or share this, remember to give credit. The MIT license lets you modify and share, but you can't remove my name or say you made it if you didn't. You also can't rebrand Aero1EOS without saying who really made it. If you don't follow these rules, it's against the law and we'll know because of Git history, We'll tell everyone about it on places like GitHub, And if Github doesn't bring it down or anything, May Allah put u in front of me in the day of judgement so we can have a proper conversation.
+> **Important Notice:** If you change or share this, remember to give credit. The MIT license lets you modify and share, but you can't remove my name or say you made it if you didn't. You also can't rebrand ScribbleOS without saying who really made it. If you don't follow these rules, it's against the law and we'll know because of Git history, We'll tell everyone about it on places like GitHub, And if Github doesn't bring it down or anything, May Allah put u in front of me in the day of judgement so we can have a proper conversation.
 
 ### Demo Assets
 
-* **Bad Apple!! Animation: ** This is based on the *Touhou Project*. We're using these assets to show how well the Aero1EOS 4 video driver works, and they were made using ffmpeg on the bad apple video.
+* **Bad Apple!! Animation: ** This is based on the *Touhou Project*. We're using these assets to show how well the ScribbleOS 4 video driver works, and they were made using ffmpeg on the bad apple video.
