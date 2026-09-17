@@ -101,13 +101,20 @@ ScribbleOS 4 is a OS that was built from scratch. It's like a notebook for your 
 
 ScribbleOS 4 comes with a special demo that shows off its capabilities. This demo is called "Bad Apple!!" and it's an ASCII animation. The main goal of this demo is to highlight how stable the kernel is when it comes to quickly mapping VGA memory. It also showcases the **Notebook Edition** and its independent TTY system, which can handle things on its own.
 
-### 🛠 Technical Specifications
+## 🛠 Technical Specifications
 
 * **Resolution:** 80x24 *(Workspace mode — row 25 is reserved for the status bar!)*
 * The frame rate is around 10 to 15 frames per second, and you can actually adjust this by changing the kernel delay loop.
 * **Protected Status Bar:** The 25th row still works perfectly, showing the current time and active TTY ID in real-time, without any interruptions or flickering, even when something is playing.
 * **Memory Mapping:** Direct writes to `0xB8000` using a high-performance DMA-simulated loop.
 
+## NEW MASCOT!
+
+<p align="center">
+    <img src="images-or-assets/MASCOT.jpg" alt="Snake Mascot">
+    <br>
+    <small>It is ANTI-XVs snake, go check out his keyboard! https://github.com/ANTI-XV/XVoard</small>
+</p>
 ---
 
 ## 💬 ScribbleOS Community

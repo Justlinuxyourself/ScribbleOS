@@ -237,6 +237,7 @@ typedef struct {
 } __attribute__((packed)) CpuPanicState;
 
 // Extracted Global Declarations
+extern void alifs_init();
 extern int alifs_delete_recursive(char* path);
 extern void alifs_read_into_buffer();
 extern int atoi_custom(char* s); // Ensure this is in your string/lib code

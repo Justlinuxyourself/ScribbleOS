@@ -29,28 +29,28 @@ todo_t my_list[10]; // 10 slots for your daily goals
 #define QR_SIZE 21
 
 // Rebuilt: Version 1 QR matrix (21x21) encoding "https://h1.nu/a9"
-const unsigned char alios_discord_qr[QR_SIZE][QR_SIZE] = {
-    {1,1,1,1,1,1,1,0,1,1,0,0,1,0,1,1,1,1,1,1,1}, // 0
-    {1,0,0,0,0,0,1,0,0,1,0,1,0,0,1,0,0,0,0,0,1}, // 1
-    {1,0,1,1,1,0,1,0,1,0,1,1,1,0,1,0,1,1,1,0,1}, // 2
-    {1,0,1,1,1,0,1,0,0,0,0,1,0,0,1,0,1,1,1,0,1}, // 3
-    {1,0,1,1,1,0,1,0,1,1,1,0,0,0,1,0,1,1,1,0,1}, // 4
+const unsigned char scros_discord_qr[QR_SIZE][QR_SIZE] = {
+    {1,1,1,1,1,1,1,0,0,1,0,0,0,0,1,1,1,1,1,1,1}, // 0
+    {1,0,0,0,0,0,1,0,0,1,0,0,1,0,1,0,0,0,0,0,1}, // 1
+    {1,0,1,1,1,0,1,0,0,1,0,1,1,0,1,0,1,1,1,0,1}, // 2
+    {1,0,1,1,1,0,1,0,1,0,1,0,1,0,1,0,1,1,1,0,1}, // 3
+    {1,0,1,1,1,0,1,0,1,0,1,0,0,0,1,0,1,1,1,0,1}, // 4
     {1,0,0,0,0,0,1,0,0,0,1,1,1,0,1,0,0,0,0,0,1}, // 5
     {1,1,1,1,1,1,1,0,1,0,1,0,1,0,1,1,1,1,1,1,1}, // 6
-    {0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0}, // 7
-    {1,1,0,1,1,1,0,0,0,0,1,1,1,1,1,1,0,1,0,1,1}, // 8
-    {0,0,1,0,0,1,1,1,0,1,0,1,0,1,1,0,1,1,0,0,0}, // 9
-    {1,1,0,0,1,0,0,0,1,0,1,0,1,0,1,1,0,0,1,1,1}, // 10
-    {1,1,1,0,0,1,1,1,0,1,1,0,0,0,0,0,1,0,1,0,0}, // 11
-    {0,1,0,1,1,0,1,1,1,1,0,0,1,1,0,1,1,0,0,1,0}, // 12
-    {0,0,0,0,0,0,0,0,1,1,1,0,1,1,0,0,1,1,1,0,0}, // 13
-    {1,1,1,1,1,1,1,0,1,1,0,1,0,0,1,1,0,1,1,1,0}, // 14
-    {1,0,0,0,0,0,1,0,0,0,1,0,1,1,0,1,0,0,1,0,1}, // 15
-    {1,0,1,1,1,0,1,0,1,0,1,0,0,0,1,0,0,1,0,0,1}, // 16
-    {1,0,1,1,1,0,1,0,1,1,1,1,0,1,1,0,1,1,0,1,0}, // 17
-    {1,0,1,1,1,0,1,0,0,0,1,0,0,1,1,1,0,0,1,1,1}, // 18
-    {1,0,0,0,0,0,1,0,1,0,0,1,1,1,1,1,0,1,0,0,0}, // 19
-    {1,1,1,1,1,1,1,0,1,1,1,0,1,0,0,0,1,0,1,1,1}  // 20
+    {0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0}, // 7
+    {1,1,0,0,0,1,1,1,0,1,0,1,0,0,0,0,1,1,0,0,0}, // 8
+    {0,1,1,0,1,0,0,1,0,1,1,0,0,1,0,0,0,1,1,1,0}, // 9
+    {0,0,1,0,1,0,1,0,0,1,0,0,1,1,1,1,0,0,1,1,0}, // 10
+    {1,0,0,1,0,1,0,1,0,0,0,1,1,1,0,1,1,1,1,0,0}, // 11
+    {1,0,1,0,1,0,1,0,1,0,1,0,1,1,0,0,0,0,0,1,0}, // 12
+    {0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,1,1,1,0,1}, // 13
+    {1,1,1,1,1,1,1,0,1,0,0,1,1,0,0,1,0,0,1,1,0}, // 14
+    {1,0,0,0,0,0,1,0,1,1,1,0,0,0,1,0,0,1,1,0,1}, // 15
+    {1,0,1,1,1,0,1,0,0,1,1,1,0,1,1,1,1,1,0,0,0}, // 16
+    {1,0,1,1,1,0,1,0,0,1,0,0,0,0,0,1,1,0,1,1,0}, // 17
+    {1,0,1,1,1,0,1,0,0,1,0,0,1,0,1,1,1,1,1,1,1}, // 18
+    {1,0,0,0,0,0,1,0,1,0,1,0,0,0,0,1,1,1,1,0,0}, // 19
+    {1,1,1,1,1,1,1,0,1,0,0,1,0,0,1,1,0,1,0,1,0}  // 20
 };
 
 
@@ -1287,7 +1287,12 @@ void cmd_cd(char* args) {
         vga_write("Moved up to: "); vga_write(current_path); vga_write("\n");
         return;
     }
-
+    if (args[0] != '/') {
+        char formatted_args[256];
+        formatted_args[0] = '/';
+        strcpy(&formatted_args[1], args);
+        strcpy(args, formatted_args);
+    }
     if (alifs_is_directory(args)) {
         if (strcmp(current_path, "/") == 0) {
             char temp[256];
@@ -1319,7 +1324,7 @@ void cmd_mkdir(char* args) {
     }
 }
 
-void aosdcserver() {
+void sosdcserver() {
     vga_write("https://discord.gg/ymxpjGq9Gu");
 }
 void cmd_asma(char* args) {
@@ -1347,7 +1352,7 @@ void cmd_asma(char* args) {
     vga_write("Meaning: "); vga_write(names[r].meaning);
     vga_write("\n-------------------------\n");
 }
-void install_aos() {
+void install_sos() {
   cmd_install_os();
 }
 void cmd_divbyzero(char* args) {
@@ -1460,24 +1465,17 @@ void display_discord_qr() {
     // 3. Draw QR code
     // Version 1 is 21x21. Starting at 19 gives perfect horizontal centering.
     const int start_row = 2;
-    const int start_col = 19; 
+    const int start_col = 9; 
 
     for (int y = 0; y < QR_SIZE; y++) {
         for (int x = 0; x < QR_SIZE; x++) {
-            draw_qr_module(vga_hardware, start_row + y, start_col + x, alios_discord_qr[y][x]);
-            draw_qr_module(active->buffer, start_row + y, start_col + x, alios_discord_qr[y][x]);
+            draw_qr_module(vga_hardware, start_row + y, start_col + x, scros_discord_qr[y][x]);
+            draw_qr_module(active->buffer, start_row + y, start_col + x, scros_discord_qr[y][x]);
         }
     }
 
-    // 4. Wait for user interaction or timeout
-    // Using a loop to check for a keypress keeps the system responsive
-    for (int i = 0; i < 100; i++) { // Roughly 10 seconds
-        if (inb(0x64) & 1) break; // Exit early if key pressed
-        sleep_ms(100);
-    }
-    // Flush key if pressed
-    if (inb(0x64) & 1) inb(0x60); 
-
+    // 4. Wait 10 Seconds
+    sleep(10);
     // 5. Restore state and clean up
     status_bar_enabled = old_status_bar;
     vga_clear(); 
@@ -1724,13 +1722,13 @@ void cmd_dvd(char* args) {
                     if (col == 0 || col == box_w - 1) display_char = '|';
                     if ((row == 0 || row == box_h - 1) && (col == 0 || col == box_w - 1)) display_char = '+';
                     
-                    // Injecting "ScribbleOS" into the center row
-                    if (row == 1 && col == 3) { vga[(ty * DVD_COLS) + tx] = 'A' | (current_color << 8); col++; }
+                    // Injecting "ScrOS" into the center row (bug where it shows 1st and 3rd and so on, but "if it works dont touch it" is 1st rule)
+                    if (row == 1 && col == 3) { vga[(ty * DVD_COLS) + tx] = 'S' | (current_color << 8); col++; }
                     else if (row == 1 && col == 4) { vga[(ty * DVD_COLS) + tx] = 'e' | (current_color << 8); col++; }
-                    else if (row == 1 && col == 5) { vga[(ty * DVD_COLS) + tx] = 'r' | (current_color << 8); col++; }
+                    else if (row == 1 && col == 5) { vga[(ty * DVD_COLS) + tx] = 'c' | (current_color << 8); col++; }
                     else if (row == 1 && col == 6) { vga[(ty * DVD_COLS) + tx] = 'o' | (current_color << 8); col++; }
-                    else if (row == 1 && col == 7) { vga[(ty * DVD_COLS) + tx] = '1' | (current_color << 8); col++; }
-                    else if (row == 1 && col == 8) { vga[(ty * DVD_COLS) + tx] = 'E' | (current_color << 8); col++; }
+                    else if (row == 1 && col == 7) { vga[(ty * DVD_COLS) + tx] = 'r' | (current_color << 8); col++; }
+                    else if (row == 1 && col == 8) { vga[(ty * DVD_COLS) + tx] = 'O' | (current_color << 8); col++; }
                     else if (row == 1 && col == 9) { vga[(ty * DVD_COLS) + tx] = 'O' | (current_color << 8); col++; }
                     else if (row == 1 && col == 10) { vga[(ty * DVD_COLS) + tx] = 'S' | (current_color << 8); col++; }
                     else {
@@ -1764,7 +1762,7 @@ void cmd_socials(char* args) {
 
     vga_write("\n=================== ScribbleOS Developer Socials ===================\n");
     vga_write("  GitHub:    justlinuxyourself\n");
-    vga_write("  Discord:   alithealiosowner\n");
+    vga_write("  Discord:   alithescribbleosowner\n");
     vga_write("  TikTok:    hisswx9\n");
     vga_write("  Insta:     alithefukinglinuxlover\n");
     vga_write("  Snapchat:  a56225047\n");
@@ -2415,9 +2413,9 @@ void shell_init() {
     shell_register_command("fmrt","Wipe and init AliFS", cmd_format);
     shell_register_command("mkdir", "Create a new directory", cmd_mkdir);
     shell_register_command("gtdi", "Go To DIrectory", cmd_cd);
-    shell_register_command("aosdcserv", "ScribbleOS Discord Server", display_discord_qr);
+    shell_register_command("sosdcserv", "ScribbleOS Discord Server", display_discord_qr);
     shell_register_command("asma", "Random Name of Allah and its meaning", cmd_asma);
-    shell_register_command("install", "Install ScribbleOS", install_aos);
+    shell_register_command("install", "Install ScribbleOS", install_sos);
     shell_register_command("divbyzero", "DivbyZero", cmd_divbyzero);
     shell_register_command("gui", "GUI", gui);
     shell_register_command("color", "Interactive text and background color customization wizard", cmd_color);

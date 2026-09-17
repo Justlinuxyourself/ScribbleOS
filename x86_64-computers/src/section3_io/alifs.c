@@ -156,13 +156,16 @@ int alifs_mkdir(char* name) {
     ide_read_sector_bytes(ALIFS_START_LBA + 1, inode_sector);
     alifs_inode_t* inodes = (alifs_inode_t*)inode_sector;
 
-    // 1. Normalize the name
+    // 1. Build full path
     char full_name[FILENAME_LEN];
-    if (name[0] != '/') {
+    if (strcmp(current_path, "/") == 0) {
         full_name[0] = '/';
         strcpy(full_name + 1, name);
     } else {
-        strcpy(full_name, name);
+        strcpy(full_name, current_path);
+        int len = strlen(full_name);
+        full_name[len] = '/';
+        strcpy(full_name + len + 1, name);
     }
 
     int slot = -1;
@@ -257,4 +260,7 @@ int alifs_delete_recursive(char* path) {
     ide_write_sector_bytes(ALIFS_START_LBA + 1, inode_sector);
     vga_write("Deleted successfully.\n");
     return 0;
+}
+void alifs_init() {
+    ide_read_sector_bytes(ALIFS_START_LBA + 1, inode_sector);
 }

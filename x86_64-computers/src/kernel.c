@@ -250,7 +250,7 @@ void kernel_main() {
     vga_clear();
     
     // 1. Initial Identity
-    log_verbose("BOOT", "AliOS 4.0 Kernel Initializing...");
+    log_verbose("BOOT", "ScribbleOS 4.0 Kernel Initializing...");
 
     // 2. CPU Identification
     char cpu_name[49];
@@ -298,6 +298,8 @@ void kernel_main() {
     char size_buf[12];
     vga_write(itoa((int)(_kernel_end - _kernel_start), size_buf));
     vga_write(" bytes\n");
+    log_verbose("FS", "READING INODE TABLE TO RAM...");
+    alifs_init();
     // 5. Final Stage
     log_verbose("SYS", "Initialization sequence complete.");
     vga_clear();

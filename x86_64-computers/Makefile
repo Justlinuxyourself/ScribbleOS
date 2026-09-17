@@ -35,20 +35,20 @@ $(BIN): $(PAYLOAD_H) $(OBJ)
 
 # --- PASS 3: Replace the dummy header with the REAL data ---
 # This rule is called manually or via a special target to avoid the circular loop
-update_payload: $(BIN)
-	@echo "--- EMBEDDING REAL KERNEL INTO PAYLOAD ---"
-	grub-mkimage -o grub_core.img -O i386-pc -c early_grub.cfg -p /boot/grub biosdisk part_msdos fat normal multiboot multiboot2
-	cp /usr/lib/grub/i386-pc/boot.img .
-	@echo "/* Real ScribbleOS Payload */" > $(PAYLOAD_H)
-	xxd -i boot.img >> $(PAYLOAD_H)
-	xxd -i grub_core.img >> $(PAYLOAD_H)
-	xxd -i $(BIN) >> $(PAYLOAD_H)
-	@rm boot.img grub_core.img
-	@# Recompile only the installer with the real data
-	$(CC) $(CFLAGS) $(SRCDIR)/section4_shell/installer.c -o $(OBJDIR)/section4_shell/installer.o
-	@# Final Link
-	$(LD) $(LDFLAGS) -o $(BIN) $(OBJDIR)/section1_cpu/boot.o $(filter-out $(OBJDIR)/section1_cpu/boot.o, $(OBJ))
-
+# update_payload: $(BIN)
+#	@echo "--- EMBEDDING REAL KERNEL INTO PAYLOAD ---"
+#	grub-mkimage -o grub_core.img -O i386-pc -c early_grub.cfg -p /boot/grub biosdisk part_msdos fat normal multiboot multiboot2
+#	cp /usr/lib/grub/i386-pc/boot.img .
+#	@echo "/* Real ScribbleOS Payload */" > $(PAYLOAD_H)
+#	xxd -i boot.img >> $(PAYLOAD_H)
+#	xxd -i grub_core.img >> $(PAYLOAD_H)
+#	xxd -i $(BIN) >> $(PAYLOAD_H)
+#	@rm boot.img grub_core.img
+#	@# Recompile only the installer with the real data
+#	$(CC) $(CFLAGS) $(SRCDIR)/section4_shell/installer.c -o $(OBJDIR)/section4_shell/installer.o
+#	@# Final Link
+#	$(LD) $(LDFLAGS) -o $(BIN) $(OBJDIR)/section1_cpu/boot.o $(filter-out $(OBJDIR)/section1_cpu/boot.o, $(OBJ))
+#
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) $< -o $@
@@ -66,7 +66,7 @@ $(ISO): $(BIN)
 	grub-mkrescue -o $(ISO) isodir
 
 clean:
-	rm -rf $(OBJDIR) $(BIN) $(ISO) isodir $(PAYLOAD_H)
+	rm -rf $(OBJDIR) $(BIN) $(ISO) isodir $(PAYLOAD_H) *.img
 
 .PHONY: all clean update_payload run _check-qemu _create-disk
 
