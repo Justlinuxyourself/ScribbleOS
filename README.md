@@ -113,8 +113,9 @@ ScribbleOS 4 comes with a special demo that shows off its capabilities. This dem
 <p align="center">
     <img src="images-or-assets/MASCOT.jpg" alt="Snake Mascot">
     <br>
-    <small>It is ANTI-XVs snake, go check out his keyboard! https://github.com/ANTI-XV/XVoard</small>
+    <small>It is DEXVs snake, go check out his keyboard! https://github.com/ANTI-XV/XVoard</small>
 </p>
+
 ---
 
 ## 💬 ScribbleOS Community
