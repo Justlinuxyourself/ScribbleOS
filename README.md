@@ -1,3 +1,10 @@
+<p align="center">
+  <img src="images-or-assets/LOGO.png" alt="Scribble OS Logo" width="450">
+  <br>
+  <small>Thank you Mach10 for the logo!!! Creds to him</small>
+</p>
+
+
 <h1 align="center">💻 ScribbleOS 4.0 - Notebook Edition</h1>
 
 <h3 align="center">
