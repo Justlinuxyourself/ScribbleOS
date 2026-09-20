@@ -6,7 +6,9 @@
 
 
 <h1 align="center">💻 ScribbleOS 4.0 - Notebook Edition</h1>
-
+<p align="center>
+  <small>Was named Aero1EOS</small>
+</p>
 <h3 align="center">
 
 Total Development Commits: <!--COMMIT_COUNT-->928<!--/COMMIT_COUNT-->
