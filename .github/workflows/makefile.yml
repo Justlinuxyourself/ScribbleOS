@@ -116,7 +116,7 @@ jobs:
           DISCORD_WEBHOOK_2: ${{ secrets.DISCORD_WEBHOOK_2 }}
           BUILD_STATUS: ${{ steps.build_step.outcome }}
         run: |
-          LATEST_MSG=$(git log -1 --pretty=%B)
+          LATEST_MSG=$(git log -1 HEAD~1 --pretty=%B)
           export COMMIT_MSG="$LATEST_MSG"
           python3 << 'EOF'
           import json
